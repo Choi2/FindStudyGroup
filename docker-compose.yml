@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: mariadb
+    image: mariadb:latest
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - /c/docker/mariadb/data:/var/lib/mysql
+      - /c/docker/mariadb/config:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Seoul
